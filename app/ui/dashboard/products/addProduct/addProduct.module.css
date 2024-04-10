@@ -1,0 +1,39 @@
+.container{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #182237;
+    border-radius: 10px;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form input, .form textarea, .form select{
+    padding: 20px;
+    background-color: transparent;
+    color: #b3b3b3;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+}
+
+.form textarea{
+    width: 100%;
+}
+
+.form input, .form select{
+    width: 450px;
+}
+
+.form button{
+    width: 100%;
+    padding: 30px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

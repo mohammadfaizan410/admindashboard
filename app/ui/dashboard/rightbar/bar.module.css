@@ -1,0 +1,52 @@
+.container{
+    position: fixed;
+}
+.item{
+    position: relative;
+    background-color: #181818;
+    padding:20px 10px ;
+    border-radius: 10px;
+    margin-bottom: 20px;   
+}
+.bgContainer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #5d57c9;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+    width: max-content;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notification{
+    font-weight: bold;
+
+}
+
+.title{
+    font-weight: 500;
+    font-style: 12px;
+    color: #b3b3b3
+}
+
+
+
+

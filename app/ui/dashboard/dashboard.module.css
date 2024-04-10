@@ -1,0 +1,42 @@
+/* :root {
+    --bg : #0d0202;
+    --bgsoft: #182237;
+    --text: #f5f5f5;
+    --textsoft: #b3b3b3; 
+  } */
+
+.container{
+    display: flex;
+}
+
+.menu {
+    flex: 1;
+    background-color: #182237 ;
+    padding: 10px;
+    min-height: 97vh;
+}
+.content {
+    flex: 4;
+    padding: 10px;
+}
+
+.wrapper{
+    display: flex;
+    gap:20px;
+    padding: 20px;
+}
+.main{
+    flex: 3;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.cards{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.side{
+    flex: 1;
+}

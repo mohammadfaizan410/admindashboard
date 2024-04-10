@@ -1,0 +1,12 @@
+.container{
+    height: 400px;
+    background-color: #182237;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.title{
+    margin-bottom: 20px;
+    font-weight: 200;
+    color: #b3b3b3;
+}
