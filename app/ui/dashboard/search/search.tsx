@@ -4,6 +4,7 @@ import { MdSearch } from 'react-icons/md';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import { ChangeEvent } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
 
 export default function Search({props}:{
     props: {
@@ -13,7 +14,7 @@ export default function Search({props}:{
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const {replace} = useRouter();
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useDebouncedCallback((e: ChangeEvent<HTMLInputElement>) => {
     const params = new URLSearchParams(searchParams)
     if(e.target.value){
       params.set(`q`, e.target.value)
@@ -21,7 +22,7 @@ export default function Search({props}:{
       params.delete('q')
     }
     replace(`${pathname}?${params}`)
-  }
+  })
   return (
     <div className={styles.container}>
         <div className={styles.search}>
