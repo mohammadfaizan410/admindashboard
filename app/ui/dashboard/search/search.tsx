@@ -16,13 +16,14 @@ export default function Search({props}:{
   const {replace} = useRouter();
   const handleChange = useDebouncedCallback((e: ChangeEvent<HTMLInputElement>) => {
     const params = new URLSearchParams(searchParams)
+    params.set("page","1")
     if(e.target.value){
       params.set(`q`, e.target.value)
     }else{
       params.delete('q')
     }
     replace(`${pathname}?${params}`)
-  })
+  }, 400)
   return (
     <div className={styles.container}>
         <div className={styles.search}>

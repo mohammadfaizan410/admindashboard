@@ -4,14 +4,17 @@ import Search from "@/app/ui/dashboard/search/search";
 import Image from "next/image";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { UserInterface } from "@/app/models/models";
-import { getUsers } from "@/app/lib/data";
+import { getUsers, totalUsers } from "@/app/lib/data";
 export default async function UsersPage({searchParams}: {
     searchParams: {
         q?: string,
+        page?:string,
     }
 }) {
-    const query = searchParams.q || ""
-    const allusers: UserInterface[] = await getUsers(query);
+    const query = searchParams.q || "";
+    const page = searchParams.page || "1";
+    const allusers: UserInterface[] = await getUsers(query,page);
+    const totalUsersCount: number = await totalUsers();
     console.log(query)
     return (
         <div className={styles.container}>
@@ -65,7 +68,11 @@ export default async function UsersPage({searchParams}: {
 
                 </tbody>
             </table>
-            <Pagination />
+            <Pagination
+                params={{
+                   totalUsers: totalUsersCount
+                }}
+            />
         </div>
     );
 }
